@@ -1,0 +1,138 @@
+//HomePage
+.Homepage-section {
+  background: url(../../assets/images/profile.jpeg) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background: #003;
+}
+.homepage-container {
+  color: white;
+  text-align: center;
+  background: none;
+  position: relative;
+  display: table-cell !important;
+  vertical-align: middle;
+  h5 {
+    font-family: "poppins-bold", sans-serif;
+    line-height: 1.565;
+  }
+  h1 {
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 1.071;
+    margin-top: 1rem;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+  }
+  .homepage-subtitle {
+    font-size: 1.5rem;
+  }
+  .typist-text {
+    font-weight: 800;
+  }
+  .Social_Icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    a {
+      color: white;
+      display: flex;
+      width: 35px;
+      height: 35px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid white;
+      border-radius: 50%;
+      margin: 0 5px;
+    }
+  }
+  .Bounce_Icon {
+    border: 2px solid white;
+    width: 23px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+    top: 150px;
+  }
+  .Bounce_Dot {
+    width: 1px;
+    background-color: white;
+    display: inline-block;
+    height: 1px;
+    bottom: 10px;
+    position: relative;
+    border: 2px solid white;
+    animation: dot 1s linear infinite;
+  }
+  @keyframes dot {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 20px;
+      opacity: 0;
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .homepage-title > h1 {
+    font-size: 30px;
+  }
+}
+@media (min-width: 768px) and (max-width: 980px) {
+  .homepage-title > h1 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .homepage-title > h1 {
+    font-size: 20px;
+  }
+}
+
+//Navbar
+
+.Navbar-Container {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  .Navbar-title {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    width: 100%;
+    cursor: pointer;
+    color: black;
+  }
+  .Navbar-List > ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    padding: 10px 100px;
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-indent: 10px;
+    cursor: pointer;
+    color: black;
+  }
+  li {
+    color: black;
+  }
+}
