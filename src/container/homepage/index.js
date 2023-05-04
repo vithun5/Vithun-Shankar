@@ -14,6 +14,7 @@ const Homepage = () => {
   const [isNumberRevealed, setIsNumberRevealed] = useState(false);
   const [isEmailRevealed, setIsEmailRevealed] = useState(false);
   const [activeItem, setActiveItem] = useState("");
+  const [showPampers, setShowPampers] = useState(false);
 
   //Navbar Active
   useEffect(() => {
@@ -367,8 +368,65 @@ const Homepage = () => {
             <Typography sx={{ color: "white" }}>
               May I help you with something? Hire me now.
             </Typography>
-            <button>Hire Me</button>
+            <Link to="contact" smooth={true} duration={1000}>
+              <button>Hire Me</button>
+            </Link>
           </Box>
+        </section>
+      </div>
+
+      {/* Experience */}
+      <div id="experience">
+        <section className="experience-section">
+          <Container className="Experience-container">
+            <Box sx={{ textAlign: "center", marginTop: "80px" }}>
+              <Typography
+                variant="h4"
+                sx={{
+                  textTransform: "uppercase",
+                  fontWeight: "500",
+                  letterSpacing: "2px",
+                  fontFamily: "Roboto",
+                }}
+              >
+                Experience
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "16px",
+                  lineHeight: "30px",
+                  color: "gray",
+                  marginBottom: "80px",
+                }}
+              >
+                A variety of Experiences all over the world.
+              </Typography>
+            </Box>
+            <Box className="center-line"></Box>
+            <Box className="project-details">
+              <Typography className="title1">P&G PAMPERS US DEVOPS</Typography>
+              <Typography className="subtitle1">React.JS Developer</Typography>
+              {!showPampers && (
+                <i
+                  class="bi bi-caret-down-square-fill"
+                  style={{
+                    float: "right",
+                    fontSize: "20px",
+                    position: "relative",
+                    bottom: "10px",
+                  }}
+                  onClick={() => setShowPampers(true)}
+                ></i>
+              )}
+              {showPampers && (
+                <Typography className="description1">
+                  We are a small team of software engineers and testers with
+                  varied experience and academic backgrounds.We develop and
+                  maintain the website and I worked as a frontend developer.
+                </Typography>
+              )}
+            </Box>
+          </Container>
         </section>
       </div>
     </div>

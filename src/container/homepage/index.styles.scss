@@ -364,18 +364,20 @@
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
-  height: 200px;
+  height: 180px;
 }
 .Hireme-div {
   display: flex;
   width: 50%;
-
   margin-right: auto;
   margin-left: auto;
   gap: 20px;
+  padding-top: 75px;
   p {
-    font-family: "Montserrat";
-    font-size: 30px;
+    font-size: 29px;
+    margin: auto;
+  }
+  a {
   }
   button {
     background: transparent;
@@ -383,5 +385,56 @@
     border: 1px solid white;
     border-radius: 2px;
     width: 140px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 8px;
+    height: 100%;
+  }
+  button:hover {
+    background-color: #54b435;
+    border: none;
+  }
+}
+
+//Experience
+
+.experience {
+  height: 100%;
+  width: 100%;
+}
+.experience-section {
+  background: url(../../assets/images/experience-background.jpg) no-repeat;
+  background-size: cover;
+  margin-top: -100px;
+}
+.Experience-container {
+  margin: 100px auto 0 auto;
+  padding-top: 100px;
+}
+.center-line {
+  background-color: #ddd;
+  position: absolute;
+  height: 100%;
+  width: 4px;
+  left: 50%;
+}
+.project-details {
+  width: 40%;
+  padding: 15px;
+  background-color: white;
+  height: 85px;
+  .title1 {
+    font-family: "roboto";
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .subtitle1 {
+    color: gray;
+    font-size: 14px;
+  }
+  .description1 {
+    margin-top: 7px;
+    color: gray;
+    font-size: 15px;
   }
 }
