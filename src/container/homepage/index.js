@@ -15,6 +15,7 @@ const Homepage = () => {
   const [isEmailRevealed, setIsEmailRevealed] = useState(false);
   const [activeItem, setActiveItem] = useState("");
   const [showPampers, setShowPampers] = useState(false);
+  const [showSK, setShowSK] = useState(false);
 
   //Navbar Active
   useEffect(() => {
@@ -379,7 +380,7 @@ const Homepage = () => {
       <div id="experience">
         <section className="experience-section">
           <Container className="Experience-container">
-            <Box sx={{ textAlign: "center", marginTop: "80px" }}>
+            <Box sx={{ textAlign: "center", marginTop: "33px" }}>
               <Typography
                 variant="h4"
                 sx={{
@@ -396,36 +397,129 @@ const Homepage = () => {
                   fontSize: "16px",
                   lineHeight: "30px",
                   color: "gray",
-                  marginBottom: "80px",
+                  marginBottom: "50px",
                 }}
               >
                 A variety of Experiences all over the world.
               </Typography>
             </Box>
-            <Box className="center-line"></Box>
-            <Box className="project-details">
-              <Typography className="title1">P&G PAMPERS US DEVOPS</Typography>
-              <Typography className="subtitle1">React.JS Developer</Typography>
-              {!showPampers && (
+
+            {/* Project 1 */}
+            <>
+              <Box className="center-line"></Box>
+              <Box className="project-icon">
                 <i
-                  class="bi bi-caret-down-square-fill"
+                  class="bi bi-briefcase-fill"
                   style={{
-                    float: "right",
-                    fontSize: "20px",
-                    position: "relative",
-                    bottom: "10px",
+                    fontSize: "23px",
+                    color: "white",
+                    position: "absolute",
+                    left: "32%",
+                    top: "20%",
                   }}
-                  onClick={() => setShowPampers(true)}
                 ></i>
-              )}
-              {showPampers && (
-                <Typography className="description1">
-                  We are a small team of software engineers and testers with
-                  varied experience and academic backgrounds.We develop and
-                  maintain the website and I worked as a frontend developer.
+              </Box>
+              <Box className="project-details">
+                <Typography className="title1">SK-II GEN3</Typography>
+                <Typography className="subtitle1">
+                  FrontEnd Developer
                 </Typography>
-              )}
-            </Box>
+                {!showSK && (
+                  <i
+                    class="bi bi-caret-down-square-fill bg-FF6969"
+                    style={{
+                      float: "right",
+                      fontSize: "20px",
+                      position: "relative",
+                      bottom: "20px",
+                      backgroundColor: "FF6969",
+                    }}
+                    onClick={() => setShowSK(true)}
+                  ></i>
+                )}
+                {showSK && (
+                  <Typography className="description1">
+                    It is a Beauty product Website, Where there are more than 4
+                    websites for this product which contains different languages
+                    like singapore, English, Chinese, Taiwan, Japan, Tokyo etc.
+                    I worked as a Frontend developer to maintain all the
+                    frontend work of all websites.
+                  </Typography>
+                )}
+              </Box>
+              <Typography
+                sx={{
+                  textAlign: "right",
+                  position: "absolute",
+                  right: "421px",
+                  fontSize: "19px",
+                  letterSpacing: "4px",
+                  fontFamily: "Montserrat",
+                }}
+                style={{ top: showSK ? "325px" : "327px" }}
+              >
+                April 2023 - present
+              </Typography>
+            </>
+
+            <>
+              <Box
+                className="completedProject-icon"
+                style={{ bottom: showSK ? "132px" : "248px" }}
+              >
+                <i
+                  class="bi bi-check2-all"
+                  style={{
+                    fontSize: "23px",
+                    color: "white",
+                    position: "absolute",
+                    left: "32%",
+                    top: "20%",
+                  }}
+                ></i>
+              </Box>
+              <Box className="project-details2">
+                <Typography className="title2">
+                  {" "}
+                  P&G PAMPERS US DEVOPS
+                </Typography>
+                <Typography className="subtitle2">
+                  React.JS Developer
+                </Typography>
+                {!showPampers && (
+                  <i
+                    class="bi bi-caret-down-square-fill bg-FF6969"
+                    style={{
+                      float: "right",
+                      fontSize: "20px",
+                      position: "relative",
+                      bottom: "20px",
+                      backgroundColor: "FF6969",
+                    }}
+                    onClick={() => setShowPampers(true)}
+                  ></i>
+                )}
+                {showPampers && (
+                  <Typography className="description2">
+                    We are a small team of software engineers and testers with
+                    varied experience and academic backgrounds.We develop and
+                    maintain the website and I worked as a frontend developer.
+                  </Typography>
+                )}
+                <Typography
+                  sx={{
+                    position: "relative",
+                    right: "572px",
+                    fontSize: "19px",
+                    letterSpacing: "4px",
+                    fontFamily: "Montserrat",
+                  }}
+                  style={{ bottom: showPampers ? "114px" : "35px" }}
+                >
+                  February 2022 - 2023
+                </Typography>
+              </Box>
+            </>
           </Container>
         </section>
       </div>
