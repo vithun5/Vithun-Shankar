@@ -1,11 +1,26 @@
-import { Typography, Box, Container, Avatar } from "@mui/material";
+import {
+  Typography,
+  Box,
+  Container,
+  Avatar,
+  Card,
+  CardContent,
+  CardActions,
+  Button,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Hotjar from "@hotjar/browser";
+import { CardMedia } from "@mui/material";
 import { Link } from "react-scroll";
-import myphoto from "../../assets/images/myphoto.jpg";
-
+import Herophoto from "../../assets/images/myphoto.jpg";
+import stjosephs from "../../assets/images/stjosephs.jpg";
+import stjosephs1 from "../../assets/images/stjosephs1.jpg";
+import postit from "../../assets/images/postit.PNG";
+import blogger from "../../assets/images/bloggerapp.PNG";
+import githubfinder from "../../assets/images/githubFinder.PNG";
 import Typed from "react-typed";
-
+import pharmacy from "../../assets/images/pharmacy-store.png";
+import googlethemed from "../../assets/images/google-themed.PNG";
 import "./index.styles.scss";
 
 const Homepage = () => {
@@ -13,9 +28,10 @@ const Homepage = () => {
   const [isTitleScrolled, setIsTitleScrolled] = useState(false);
   const [isNumberRevealed, setIsNumberRevealed] = useState(false);
   const [isEmailRevealed, setIsEmailRevealed] = useState(false);
-  const [activeItem, setActiveItem] = useState("");
+  const [activeItem, setActiveItem] = useState(false);
   const [showPampers, setShowPampers] = useState(false);
   const [showSK, setShowSK] = useState(false);
+  const [isHamburger, setIsHamburger] = useState(false);
 
   //Navbar Active
   useEffect(() => {
@@ -51,50 +67,93 @@ const Homepage = () => {
   const handleEmail = () => {
     setIsEmailRevealed(true);
   };
+
+  //education card
+
+  const handleCard = () => {
+    setActiveItem(true);
+  };
+
   return (
-    <div>
+    <div style={{ overflowX: "hidden" }}>
       {/* NAVBAR */}
       {isScrolled && (
-        <section id="header">
-          <Container className="Navbar-Container">
-            <Box className="Navbar-title">
-              <Link to="Home" smooth={true} duration={1000}>
-                {isTitleScrolled && (
-                  <Typography sx={{ fontSize: "20px" }}>
-                    VITHUN <span className="lastName">SHANKAR</span>
-                  </Typography>
-                )}
-              </Link>
-            </Box>
-            <Box className="Navbar-List">
-              <ul>
+        <div>
+          <section id="header">
+            <Container className="Navbar-Container">
+              <Box className="Navbar-title">
                 <Link to="Home" smooth={true} duration={1000}>
-                  <li>HOME</li>
+                  {isTitleScrolled && (
+                    <Typography sx={{ fontSize: "20px" }}>
+                      VITHUN <span className="lastName">SHANKAR</span>
+                    </Typography>
+                  )}
                 </Link>
-                <Link to="about" smooth={true} duration={1000}>
-                  <li>ABOUT</li>
-                </Link>
-                <Link to="experience" smooth={true} duration={1000}>
-                  <li>EXPERIENCE</li>
-                </Link>
-                <Link to="education" smooth={true} duration={1000}>
-                  <li>EDUCATION</li>
-                </Link>
-                <Link to="portfolio" smooth={true} duration={1000}>
-                  <li>PORTFOLIO</li>
-                </Link>
-                <Link to="blog" smooth={true} duration={1000}>
-                  <li>BLOG</li>
-                </Link>
-                <Link to="contact" smooth={true} duration={1000}>
+              </Box>
+              <Box className="Navbar-List">
+                <ul>
+                  <Link to="Home" smooth={true} duration={1000}>
+                    <li>HOME</li>
+                  </Link>
+                  <Link to="about" smooth={true} duration={1000}>
+                    <li>ABOUT</li>
+                  </Link>
+                  <Link to="experience" smooth={true} duration={1000}>
+                    <li>EXPERIENCE</li>
+                  </Link>
+                  <Link to="education" smooth={true} duration={1000}>
+                    <li>EDUCATION</li>
+                  </Link>
+                  <Link to="portfolio" smooth={true} duration={1000}>
+                    <li>PORTFOLIO</li>
+                  </Link>
+                  {/* <Link to="contact" smooth={true} duration={1000}>
                   <li>CONTACT</li>
-                </Link>
-              </ul>
+                </Link> */}
+                </ul>
+              </Box>
+              <Box
+                className="hamburger-menu"
+                style={{ display: "none", fontSize: "30px", curosr: "pointer" }}
+              >
+                <i
+                  class="bi bi-list"
+                  onClick={() => setIsHamburger(!isHamburger)}
+                ></i>
+              </Box>
+            </Container>
+            {isHamburger && (
+              <div>
+                <hr style={{ border: "1px solid black" }}></hr>
+              </div>
+            )}
+            <Box className="hamburgerMenu">
+              {isHamburger && (
+                <ul>
+                  <Link to="Home" smooth={true} duration={1000}>
+                    <li>HOME</li>
+                  </Link>
+                  <Link to="about" smooth={true} duration={1000}>
+                    <li>ABOUT</li>
+                  </Link>
+                  <Link to="experience" smooth={true} duration={1000}>
+                    <li>EXPERIENCE</li>
+                  </Link>
+                  <Link to="education" smooth={true} duration={1000}>
+                    <li>EDUCATION</li>
+                  </Link>
+                  <Link to="portfolio" smooth={true} duration={1000}>
+                    <li>PORTFOLIO</li>
+                  </Link>
+                  {/* <Link to="contact" smooth={true} duration={1000}>
+                  <li>CONTACT</li>
+                </Link> */}
+                </ul>
+              )}
             </Box>
-          </Container>
-        </section>
+          </section>
+        </div>
       )}
-
       {/* HOMEPAGE */}
       <div id="Home">
         <section
@@ -151,7 +210,6 @@ const Homepage = () => {
           </Container>
         </section>
       </div>
-
       {/* About page */}
       <div id="about">
         <section className="aboutPage-Section" style={{ marginTop: "-100px" }}>
@@ -174,7 +232,7 @@ const Homepage = () => {
             <Box className="media-left">
               <Avatar
                 alt=" myPhoto"
-                src={myphoto}
+                src={Herophoto}
                 sx={{ width: 130, height: 130 }}
               />
               <Box className="media-body">
@@ -189,15 +247,12 @@ const Homepage = () => {
                   Oh yeah, I am a highly motivated, passionate hard-core web
                   developer with diverse experience in developing web
                   applications, hybrid mobile apps, and Python Programming
-                  ranging from working on cute layouts, payment gateways
-                  etcetera and the list goes on till making a clone, better than
-                  Facebook. Yup, you heard it right. I did make a clone of our
-                  favourite social network from scratch.
+                  ranging from working on cute layouts, payment gateways stripe.
                 </Typography>
                 <Typography>
                   Oh yeah, I am a highly motivated, passionate hard-core web
                   developer with diverse experience in developing web
-                  applications, hybrid mobile apps, and cloud c
+                  applications, hybrid mobile apps, and programming.
                 </Typography>
               </Box>
             </Box>
@@ -208,8 +263,9 @@ const Homepage = () => {
                   width: "68%",
                   boxSizing: "unset",
                 }}
+                className="about-mobile"
               >
-                <div className="col-md-6 col-sm-6">
+                <div className="col-md-6 ">
                   <Typography
                     sx={{
                       fontSize: "1rem",
@@ -229,8 +285,7 @@ const Homepage = () => {
                     }}
                   >
                     <i className="fa fa-globe text-primary mr-1"></i>
-                    Web Developer, Graphic Designer, and a User Experience
-                    Architect.
+                    Web Developer, Graphic Designer, and a Content Creator.
                     <br />
                     <i className="fa fa-graduation-cap text-success mr-1"></i>
                     Bachelors in Information Technology with First class, St
@@ -361,7 +416,6 @@ const Homepage = () => {
           </Container>
         </section>
       </div>
-
       {/* Parallex */}
       <div id="parallex">
         <section className="Hire-me">
@@ -375,7 +429,6 @@ const Homepage = () => {
           </Box>
         </section>
       </div>
-
       {/* Experience */}
       <div id="experience">
         <section className="experience-section">
@@ -457,6 +510,7 @@ const Homepage = () => {
                   fontFamily: "Montserrat",
                 }}
                 style={{ top: showSK ? "325px" : "327px" }}
+                className="project1-date"
               >
                 April 2023 - present
               </Typography>
@@ -515,6 +569,7 @@ const Homepage = () => {
                     fontFamily: "Montserrat",
                   }}
                   style={{ bottom: showPampers ? "114px" : "35px" }}
+                  className="project2-date"
                 >
                   February 2022 - 2023
                 </Typography>
@@ -523,6 +578,470 @@ const Homepage = () => {
           </Container>
         </section>
       </div>
+
+      {/*education */}
+
+      <div id="education">
+        <section className="education-section">
+          <Container className="education-container">
+            <Box className="Education-title">
+              <Typography
+                variant="h4"
+                sx={{
+                  textTransform: "uppercase",
+                  fontWeight: "500",
+                  letterSpacing: "2px",
+                  fontFamily: "Roboto",
+                }}
+                className="title1"
+              >
+                Education
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "16px",
+                  lineHeight: "30px",
+                  color: "gray",
+                  marginBottom: "50px",
+                }}
+                className="subtitle1"
+              >
+                The stuff I am made up of.
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "16px",
+                  lineHeight: "30px",
+                  color: "gray",
+                  marginBottom: "50px",
+                }}
+                className="subtitle1"
+              >
+                2017-2021
+              </Typography>
+            </Box>
+            <Box className="Card-Box">
+              {/* First card */}
+
+              <Card
+                sx={{
+                  maxWidth: 522,
+                  height: 380,
+                  marginBottom: "80px",
+                  boxShadow: "0px 3px 19px black",
+                }}
+                className="card1"
+              >
+                <CardMedia sx={{ height: 140 }} image={stjosephs} />
+                <CardContent sx={{}}>
+                  <Typography
+                    sx={{
+                      fontSize: "20px",
+                      fontWeight: "600",
+                      letterSpacing: "2px",
+                    }}
+                  >
+                    Bachelor of Engineering in Information Technology.
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: "13px",
+                      color: "gray",
+                      fontWeight: "500px",
+                      letterSpacing: "2px",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    St Joseph's Institute of technology(First Class)
+                  </Typography>
+                  <Typography>
+                    This course covers the basic theoretical aspects of Computer
+                    Software and Engineering with basics of engineering like
+                    Mechanical and Electrical Engineering with workshop
+                    experience.
+                  </Typography>
+                </CardContent>
+                {!activeItem && (
+                  <CardActions>
+                    <Button size="small" onClick={handleCard}>
+                      Learn More
+                    </Button>
+                  </CardActions>
+                )}
+              </Card>
+
+              {/* Second Card */}
+              {activeItem && (
+                <Card
+                  sx={{
+                    maxWidth: 522,
+                    height: 380,
+                    marginBottom: "80px",
+                    boxShadow: "0px 3px 19px black",
+                  }}
+                  className="card2"
+                >
+                  <CardMedia sx={{ height: 140 }} image={stjosephs1} />
+                  <CardContent sx={{}}>
+                    <Typography
+                      sx={{
+                        fontWeight: "500",
+                      }}
+                    >
+                      <Typed
+                        strings={[
+                          "My final project was TRAFFIC SIGNAL VIOLATION DETECTION USING DEEP LEARNING. The aim of this To detect the violation of Traffic signal i.e., if any vehicle crossing the signal when the signal is Red then it is traffic rules violation. Also to enhance the localization tasks.,the goal of the project is to automate the traffic signal violation detection system and make it easy for the traffic police department to monitor the traffic and take action against the violated vehicle owner in a fast and efficient way.",
+                        ]}
+                        typeSpeed={30}
+                      />
+                    </Typography>
+                  </CardContent>
+                </Card>
+              )}
+            </Box>
+          </Container>
+        </section>
+      </div>
+
+      {/* Awards */}
+      <div id="awards">
+        <section className="awards-section">
+          <Container className="awards-container">
+            <Box className="row award" style={{ color: "white" }}>
+              <Box
+                className="col-md-3 col-sm-6"
+                style={{ textAlign: "center" }}
+              >
+                <i class="bi bi-lightbulb" style={{ fontSize: "75px" }}></i>
+                <Typography sx={{ fontSize: "50px" }}>116</Typography>
+                <Typography sx={{ fontSize: "16px" }}>
+                  COMPLETED PROJECTS
+                </Typography>
+              </Box>
+              <Box className="col-md-3 col-sm-6">
+                <i class="bi bi-trophy" style={{ fontSize: "75px" }}></i>
+                <Typography sx={{ fontSize: "50px" }}>2</Typography>
+                <Typography sx={{ fontSize: "16px" }}>AWARDS</Typography>
+              </Box>
+              <Box className="col-md-3 col-sm-6">
+                <i class="bi bi-cup-hot" style={{ fontSize: "75px" }}></i>
+                <Typography sx={{ fontSize: "50px" }}>1005</Typography>
+                <Typography sx={{ fontSize: "16px" }}>
+                  FACEBOOK FRIENDS
+                </Typography>
+              </Box>
+              <Box className="col-md-3 col-sm-6">
+                <i class="bi bi-dropbox" style={{ fontSize: "75px" }}></i>
+                <Typography sx={{ fontSize: "50px" }}>2 </Typography>
+                <Typography sx={{ fontSize: "16px" }}>
+                  CURRENT PROJECTS
+                </Typography>
+              </Box>
+            </Box>
+          </Container>
+        </section>
+      </div>
+
+      {/* Portfolio */}
+      <div id="portfolio">
+        <section className="portfolio-section">
+          <Container className="portfolio-container">
+            <Box className="portfolio-title">
+              <Typography
+                sx={{
+                  textTransform: "uppercase",
+                  fontWeight: "600",
+                  letterSpacing: "2px",
+                  fontFamily: "Roboto",
+                  fontSize: "30px",
+                }}
+              >
+                Portfolio
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "16px",
+                  lineHeight: "30px",
+                  color: "gray",
+                  marginBottom: "50px",
+                }}
+              >
+                Check out my latest and greatest creations. Get in touch with me
+                to learn more about them in detail.
+              </Typography>
+            </Box>
+            <Box className="row " style={{ gap: "80px" }}>
+              <Box className="col-md-5">
+                <Card
+                  sx={{
+                    maxWidth: 522,
+                    height: "100%",
+                    marginBottom: "80px",
+                    boxShadow: "0px 3px 19px black",
+                  }}
+                  className="card-first"
+                >
+                  <CardMedia sx={{ height: 300 }} image={postit} />
+                  <CardContent sx={{}}>
+                    <Typography
+                      sx={{
+                        fontWeight: "600",
+                        fontSize: "20px",
+                        marginBottom: "8px",
+                      }}
+                    >
+                      Social media clone Application
+                    </Typography>
+                    <Typography>
+                      Designed and developed a Social Media Clone that can be
+                      <br></br>
+                      used by users.The User can login to his/her account using
+                      <br></br>
+                      their credentials, The User can like, unlike and view the
+                      <br></br>
+                      comments of the post and they can upload their own post as
+                      <br></br>
+                      well User can also change between light mode and dark mode
+                      <br></br>
+                      Technology used:{" "}
+                      <span style={{ fontWeight: "600" }}>
+                        React JS ,Node Js, Express Js, MongoDB, React-router,
+                        Material UI, Redux, redux-persist
+                      </span>
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button
+                      size="small"
+                      href="https://github.com/vithun5/PostIT-social-media-clone-"
+                      style={{
+                        border: "1px solid",
+                        color: "darkmagenta",
+                        margin: "auto",
+                      }}
+                    >
+                      Source
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Box>
+              <Box className="col-md-5">
+                <Card
+                  sx={{
+                    maxWidth: 522,
+                    height: "100%",
+                    marginBottom: "80px",
+                    boxShadow: "0px 3px 19px black",
+                  }}
+                  className="card-second"
+                >
+                  <CardMedia sx={{ height: 300 }} image={blogger} />
+                  <CardContent sx={{}}>
+                    <Typography
+                      sx={{
+                        fontWeight: "600",
+                        fontSize: "20px",
+                        marginBottom: "8px",
+                      }}
+                    >
+                      Blogging Application
+                    </Typography>
+                    <Typography>
+                      Designed and developed a simple Blog posting application.
+                      The user can add a blog and edit it.Technologies/Tools
+                      used:{" "}
+                      <span style={{ fontWeight: "600" }}>
+                        React Js, Redux, Express js, Html, Css,{" "}
+                      </span>
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button
+                      size="small"
+                      href="https://github.com/vithun5/Blogger"
+                      style={{
+                        border: "1px solid",
+                        color: "darkmagenta",
+                        margin: "auto",
+                      }}
+                    >
+                      Source
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Box>
+              <Box className="col-md-5">
+                <Card
+                  sx={{
+                    maxWidth: 522,
+                    height: "100%",
+                    marginBottom: "80px",
+                    boxShadow: "0px 3px 19px black",
+                  }}
+                  className="card-third"
+                >
+                  <CardMedia sx={{ height: 300 }} image={pharmacy} />
+                  <CardContent sx={{}}>
+                    <Typography
+                      sx={{
+                        fontWeight: "600",
+                        fontSize: "20px",
+                        marginBottom: "8px",
+                      }}
+                    >
+                      Pharmacy Store
+                    </Typography>
+                    <Typography>
+                      It is a Full stack Pharmacy Store application till payment
+                      using stripe. Technology used:{" "}
+                      <span style={{ fontWeight: "600" }}>
+                        React Js, Redux, Express js, Html, Css, Stripe,
+                        redux-persist{" "}
+                      </span>
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button
+                      size="small"
+                      href="https://github.com/vithun5/Pharmacy-Store"
+                      style={{
+                        border: "1px solid",
+                        color: "darkmagenta",
+                        margin: "auto",
+                      }}
+                    >
+                      Source
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Box>
+              <Box className="col-md-5">
+                <Card
+                  sx={{
+                    maxWidth: 522,
+                    height: "100%",
+                    marginBottom: "80px",
+                    boxShadow: "0px 3px 19px black",
+                  }}
+                  className="card-fourth"
+                >
+                  <CardMedia sx={{ height: 300 }} image={githubfinder} />
+                  <CardContent sx={{}}>
+                    <Typography
+                      sx={{
+                        fontWeight: "600",
+                        fontSize: "20px",
+                        marginBottom: "8px",
+                      }}
+                    >
+                      GITHUB Finder
+                    </Typography>
+                    <Typography>
+                      It is a simple Github user finder where user can search
+                      for Github profile and view it .
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button
+                      size="small"
+                      href="https://github.com/vithun5/Github-finder-using-Reactjs"
+                      style={{
+                        border: "1px solid",
+                        color: "darkmagenta",
+                        margin: "auto",
+                      }}
+                    >
+                      Source
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Box>
+              <Box className="col-md-5">
+                <Card
+                  sx={{
+                    maxWidth: 550,
+                    height: "100%",
+                    marginBottom: "80px",
+                    boxShadow: "0px 3px 19px black",
+                  }}
+                  className="card-fourth"
+                >
+                  <CardMedia sx={{ height: 300 }} image={googlethemed} />
+                  <CardContent sx={{}}>
+                    <Typography
+                      sx={{
+                        fontWeight: "600",
+                        fontSize: "20px",
+                        marginBottom: "8px",
+                      }}
+                    >
+                      Google Themed Personal Portfolio
+                    </Typography>
+                    <Typography>
+                      It is my google themed personal portfolio inspired from an
+                      article. Technology used:{" "}
+                      <span style={{ fontWeight: "600" }}>
+                        Next.JS and Styled-Component
+                      </span>
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button
+                      size="small"
+                      href="https://github.com/vithun5/Google_Themed_Personal_Portfolio"
+                      style={{
+                        border: "1px solid",
+                        color: "darkmagenta",
+                        margin: "auto",
+                      }}
+                    >
+                      Source
+                    </Button>
+                    <Button
+                      size="small"
+                      href="https://google-themed-personal-portfolio.vercel.app/"
+                      style={{ margin: "auto" }}
+                    >
+                      Live Demo
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Box>
+            </Box>
+          </Container>
+        </section>
+        <div className="footer">
+          <div className="footer-title">Copyright © 2023 Vithun Shankar </div>
+          <Box className="Social_Icons_footer">
+            <a href="https://www.facebook.com/vithun.vithun.75/">
+              <i class="fa fa-facebook "></i>
+            </a>
+            <a href="https://twitter.com/vithun_shankar_">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/vithun-shankar-484031179/">
+              <i class="fa fa-linkedin "></i>
+            </a>
+            <a href="https://github.com/vithun5?tab=repositories">
+              <i class="fa fa-github "></i>
+            </a>
+            <a href="https://google-themed-personal-portfolio.vercel.app/">
+              <i class="fa fa-briefcase "></i>
+            </a>
+          </Box>
+        </div>
+      </div>
+
+      {/* footer */}
+      {/* <div id="footer">
+        <section className="footer-section">
+          <Container>
+            <Box>
+              <Typography>Copyright 2023</Typography>
+            </Box>
+          </Container>
+        </section>
+      </div> */}
     </div>
   );
 };

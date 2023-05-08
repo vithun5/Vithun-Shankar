@@ -115,6 +115,7 @@
   background-color: white;
   width: 100%;
   z-index: 100;
+  box-shadow: 0px 3px 7px darkmagenta;
   animation: all 0.6s ease-in-out;
   @keyframes all {
     0% {
@@ -181,6 +182,21 @@
   li {
     color: black;
     letter-spacing: 1px;
+  }
+}
+.hamburgerMenu {
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    cursor: pointer;
+
+    :hover {
+      color: blueviolet;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -368,13 +384,13 @@
 }
 .Hireme-div {
   display: flex;
-  width: 50%;
+  width: 60%;
   margin-right: auto;
   margin-left: auto;
   gap: 20px;
   padding-top: 75px;
   p {
-    font-size: 29px;
+    font-size: 22px;
     margin: auto;
   }
   a {
@@ -506,4 +522,363 @@
 
   top: 1rem;
   right: 28.8rem;
+}
+
+//education
+
+.education-section {
+  background: linear-gradient(transparent 30%, #acb1d6 70%);
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: -50px;
+}
+.Education-title {
+  text-align: center;
+  margin: 50px;
+  position: relative;
+  top: 100px;
+  .title1 {
+    font-family: "roboto";
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .subtitle1 {
+    color: gray;
+    font-size: 17px;
+  }
+}
+.education-image {
+  display: block;
+}
+.Card-Box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+/* AWARDS*/
+
+.awards-section {
+  background: URL(../../assets/images/parallax-2.jpg) no-repeat center center;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+}
+.awards-container {
+  height: 350px;
+  text-align: center;
+}
+.awards-container {
+  padding: 75px 0;
+}
+/* Portfolio*/
+
+#portfolio {
+  height: 100%;
+  width: 100%;
+}
+.portfolio-container {
+  padding: 100px;
+  .portfolio-title {
+    text-align: center;
+  }
+}
+
+.card-first:hover {
+  transition: all 500ms ease 0s;
+  transform: scale(110%);
+}
+.card-second:hover {
+  transition: all 500ms ease 0s;
+  transform: scale(110%);
+}
+.card-third:hover {
+  transition: all 500ms ease 0s;
+  transform: scale(110%);
+}
+.card-fourth:hover {
+  transition: all 500ms ease 0s;
+  transform: scale(110%);
+}
+
+//footer
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  height: 160px;
+}
+.footer-title {
+  margin-top: 40px;
+}
+.Social_Icons_footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+  font-size: 23px;
+  a {
+    color: blueviolet;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid blueviolet;
+    border-radius: 50%;
+    margin: 0 5px;
+  }
+}
+
+//Mobile responsive
+
+//hire-me
+@media (min-width: 768px) and (max-width: 1124px) {
+  .Hireme-div {
+    font-size: 17px;
+    width: 80%;
+  }
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .Hireme-div {
+    width: 100%;
+    justify-content: center;
+  }
+  .Hireme-div > p {
+    font-size: 17px;
+    margin: 0;
+  }
+  .Hire-me {
+    background: url("../../assets/images/parallex.jpg") no-repeat center center;
+  }
+}
+@media (min-width: 320px) and (max-width: 500px) {
+  .Hireme-div {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Hireme-div > p {
+    font-size: 17px;
+    margin: 0;
+  }
+  .Hire-me {
+    background: url("../../assets/images/parallex.jpg") no-repeat center center;
+  }
+}
+
+//about
+@media (min-width: 768px) and (max-width: 1124px) {
+  .media-left {
+    flex-direction: column;
+  }
+  .secondProgressStatus {
+    left: 0;
+  }
+  .thirdProgressStatus {
+    left: 0;
+  }
+  .firstProgressStatus {
+    left: 0;
+  }
+  .fourthProgressStatus {
+    left: 0;
+  }
+  .fifthProgressStatus {
+    left: 0;
+  }
+  .intro-text {
+    text-align: center;
+  }
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .media-left {
+    flex-direction: column;
+  }
+  .about-mobile {
+    flex-direction: column;
+  }
+  .intro-text {
+    text-align: center;
+  }
+}
+@media (min-width: 320px) and (max-width: 500px) {
+  .media-left {
+    flex-direction: column;
+  }
+  .about-mobile {
+    flex-direction: column;
+  }
+  .secondProgressStatus {
+    left: 0;
+  }
+  .thirdProgressStatus {
+    left: 0;
+  }
+  .firstProgressStatus {
+    left: 0;
+  }
+  .fourthProgressStatus {
+    left: 0;
+  }
+  .fifthProgressStatus {
+    left: 0;
+  }
+  .intro-text {
+    text-align: center;
+  }
+}
+
+//education
+@media (min-width: 768px) and (max-width: 1124px) {
+  .project-details2 {
+    left: 0;
+  }
+  .project1-date {
+    left: 60%;
+    right: unset !important;
+  }
+  .project2-date {
+    left: 160%;
+    right: unset !important;
+  }
+  .experience-section {
+    height: 100%;
+  }
+  .completedProject-icon {
+    top: 80%;
+    left: 47%;
+  }
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .project-details2 {
+    left: 0;
+  }
+  .project1-date {
+    left: 60%;
+    right: unset !important;
+    text-align: left !important;
+  }
+  .project2-date {
+    left: 160%;
+    right: unset !important;
+  }
+  .experience-section {
+    height: 100%;
+  }
+  .completedProject-icon {
+    top: 80%;
+    left: 47%;
+  }
+}
+@media (min-width: 320px) and (max-width: 500px) {
+  .project-details2 {
+    left: 0;
+    width: 80%;
+  }
+  .project1-date {
+    position: unset !important;
+    right: unset !important;
+    text-align: left !important;
+  }
+  .project2-date {
+    position: unset !important;
+    right: unset !important;
+  }
+  .experience-section {
+    height: 100%;
+  }
+  .completedProject-icon {
+    top: 80%;
+    left: 47%;
+  }
+  .project-details {
+    width: 80%;
+  }
+  .center-line {
+    left: 88%;
+  }
+  .project-icon {
+    left: 82%;
+  }
+  .completedProject-icon {
+    left: 82%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1124px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .hamburger-menu {
+    display: block !important ;
+  }
+  .Navbar-List {
+    display: none;
+  }
+}
+@media (min-width: 320px) and (max-width: 500px) {
+  .hamburger-menu {
+    display: block !important ;
+  }
+  .Navbar-List {
+    display: none;
+  }
+}
+
+//education
+
+@media (min-width: 768px) and (max-width: 1124px) {
+  .Card-Box {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+  .Card-Box {
+    flex-direction: column;
+    gap: 0;
+    height: 100%;
+  }
+  .card1 {
+    height: 100% !important;
+  }
+  .card2 {
+    height: 100% !important;
+  }
+}
+@media (min-width: 320px) and (max-width: 500px) {
+  .Card-Box {
+    flex-direction: column;
+    gap: 0;
+    height: 100%;
+  }
+  .card1 {
+    height: 100% !important;
+  }
+  .card2 {
+    height: 100% !important;
+  }
+}
+
+//awards
+@media (min-width: 768px) and (max-width: 1124px) {
+  .awards-container {
+    height: 100%;
+  }
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .awards-container {
+    height: 100%;
+  }
+}
+@media (min-width: 320px) and (max-width: 500px) {
+  .awards-container {
+    height: 100%;
+  }
 }
