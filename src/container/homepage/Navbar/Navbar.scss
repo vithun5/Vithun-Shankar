@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;500&family=Kanit:wght@300&family=Noto+Sans:ital@1&family=Oxygen&family=Poltawski+Nowy:wght@600&family=Roboto:wght@400;500&family=Rubik:wght@400;500;700&family=Ubuntu:wght@500&display=swap");
+
+//Navbar
+#header {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0px 3px 7px darkmagenta;
+  animation: all 0.6s ease-in-out;
+  @keyframes all {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.Navbar-Container {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px;
+  .Navbar-title {
+    font-family: "Montserrat" !important;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 500;
+
+    color: black;
+    p {
+      animation: title 0.3s;
+      letter-spacing: 1px;
+      font-size: 25px !important;
+      @keyframes title {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+    }
+    :hover {
+      color: blueviolet;
+      transition: 0.9s;
+    }
+
+    .lastName {
+      color: blueviolet;
+    }
+  }
+  .Navbar-List > ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    margin: 1rem;
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-indent: 30px;
+    cursor: pointer;
+    color: black;
+    :hover {
+      color: blueviolet;
+      text-decoration: underline;
+    }
+  }
+  li {
+    color: black;
+    letter-spacing: 1px;
+  }
+}
+.hamburgerMenu {
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    cursor: pointer;
+
+    :hover {
+      color: blueviolet;
+      text-decoration: underline;
+    }
+  }
+}

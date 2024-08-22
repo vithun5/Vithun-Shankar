@@ -22,6 +22,7 @@ import Typed from "react-typed";
 import pharmacy from "../../assets/images/pharmacy-store.png";
 import googlethemed from "../../assets/images/google-themed.PNG";
 import "./index.styles.scss";
+import Navbar from "./Navbar/Navbar";
 
 const Homepage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,7 +32,6 @@ const Homepage = () => {
   const [activeItem, setActiveItem] = useState(false);
   const [showPampers, setShowPampers] = useState(false);
   const [showSK, setShowSK] = useState(false);
-  const [isHamburger, setIsHamburger] = useState(false);
 
   //Navbar Active
   useEffect(() => {
@@ -77,83 +77,8 @@ const Homepage = () => {
   return (
     <div style={{ overflowX: "hidden" }}>
       {/* NAVBAR */}
-      {isScrolled && (
-        <div>
-          <section id="header">
-            <Container className="Navbar-Container">
-              <Box className="Navbar-title">
-                <Link to="Home" smooth={true} duration={1000}>
-                  {isTitleScrolled && (
-                    <Typography sx={{ fontSize: "20px" }}>
-                      VITHUN <span className="lastName">SHANKAR</span>
-                    </Typography>
-                  )}
-                </Link>
-              </Box>
-              <Box className="Navbar-List">
-                <ul>
-                  <Link to="Home" smooth={true} duration={1000}>
-                    <li>HOME</li>
-                  </Link>
-                  <Link to="about" smooth={true} duration={1000}>
-                    <li>ABOUT</li>
-                  </Link>
-                  <Link to="experience" smooth={true} duration={1000}>
-                    <li>EXPERIENCE</li>
-                  </Link>
-                  <Link to="education" smooth={true} duration={1000}>
-                    <li>EDUCATION</li>
-                  </Link>
-                  <Link to="portfolio" smooth={true} duration={1000}>
-                    <li>PORTFOLIO</li>
-                  </Link>
-                  {/* <Link to="contact" smooth={true} duration={1000}>
-                  <li>CONTACT</li>
-                </Link> */}
-                </ul>
-              </Box>
-              <Box
-                className="hamburger-menu"
-                style={{ display: "none", fontSize: "30px", curosr: "pointer" }}
-              >
-                <i
-                  class="bi bi-list"
-                  onClick={() => setIsHamburger(!isHamburger)}
-                ></i>
-              </Box>
-            </Container>
-            {isHamburger && (
-              <div>
-                <hr style={{ border: "1px solid black" }}></hr>
-              </div>
-            )}
-            <Box className="hamburgerMenu">
-              {isHamburger && (
-                <ul>
-                  <Link to="Home" smooth={true} duration={1000}>
-                    <li>HOME</li>
-                  </Link>
-                  <Link to="about" smooth={true} duration={1000}>
-                    <li>ABOUT</li>
-                  </Link>
-                  <Link to="experience" smooth={true} duration={1000}>
-                    <li>EXPERIENCE</li>
-                  </Link>
-                  <Link to="education" smooth={true} duration={1000}>
-                    <li>EDUCATION</li>
-                  </Link>
-                  <Link to="portfolio" smooth={true} duration={1000}>
-                    <li>PORTFOLIO</li>
-                  </Link>
-                  {/* <Link to="contact" smooth={true} duration={1000}>
-                  <li>CONTACT</li>
-                </Link> */}
-                </ul>
-              )}
-            </Box>
-          </section>
-        </div>
-      )}
+      <Navbar isScrolled={isScrolled} isTitleScrolled={isTitleScrolled} />
+
       {/* HOMEPAGE */}
       <div id="Home">
         <section
@@ -176,7 +101,7 @@ const Homepage = () => {
                       "Cook",
                       "Gamer",
                       "Web Developer",
-                      "FreeLancer",
+                      "Coder",
                     ]}
                     typeSpeed={75}
                     backSpeed={75}
@@ -210,6 +135,7 @@ const Homepage = () => {
           </Container>
         </section>
       </div>
+
       {/* About page */}
       <div id="about">
         <section className="aboutPage-Section" style={{ marginTop: "-100px" }}>
@@ -237,22 +163,21 @@ const Homepage = () => {
               />
               <Box className="media-body">
                 <Typography>
-                  I am a Gamer, vegetarian, and an experimental chef. Well, I
-                  would like to experiment as much as I can, on food and my
-                  life. My body is made up of HTML & CSS, which is literally me!
-                  This defines me as a Full Stack Web Developer (Front End, Back
-                  End, Middleware, Whatever...).
+                  I'm an enthusiastic gamer with a strong passion for coding and
+                  technology. My skill set includes crafting dynamic user
+                  experiences using JavaScript, ReactJS, and Angular, as well as
+                  developing robust back-end systems with Java, Spring Boot, and
+                  Node.js. With a deep foundation in programming and a knack for
+                  problem-solving, I approach every project with energy and
+                  dedication.
                 </Typography>
                 <Typography>
-                  Oh yeah, I am a highly motivated, passionate hard-core web
-                  developer with diverse experience in developing web
-                  applications, hybrid mobile apps, and Python Programming
-                  ranging from working on cute layouts, payment gateways stripe.
-                </Typography>
-                <Typography>
-                  Oh yeah, I am a highly motivated, passionate hard-core web
-                  developer with diverse experience in developing web
-                  applications, hybrid mobile apps, and programming.
+                  Driven by curiosity and a love for innovation, I continuously
+                  explore new tools and frameworks to enhance my capabilities
+                  and deliver impactful solutions. Whether I'm building web
+                  applications or diving into the latest tech trends, I'm always
+                  eager to tackle new challenges and push the boundaries of
+                  what's possible.
                 </Typography>
               </Box>
             </Box>
@@ -285,14 +210,14 @@ const Homepage = () => {
                     }}
                   >
                     <i className="fa fa-globe text-primary mr-1"></i>
-                    Web Developer, Graphic Designer, and a Content Creator.
+                    full stack Web Developer, Software Engineer, and a Gamer.
                     <br />
                     <i className="fa fa-graduation-cap text-success mr-1"></i>
                     Bachelors in Information Technology with First class, St
                     Joseph's Institute of Technology.
                     <br />
                     <i className="fa fa-briefcase text-danger mr-1"></i>
-                    1.6+ years Industrial Experience
+                    2.8+ years Industrial Experience
                     <br />
                   </Typography>
                   <ul
@@ -314,12 +239,12 @@ const Homepage = () => {
                     <br />
                     <li>
                       <label>Birth Date :</label> <br />
-                      <span> 05 September, Every Year </span>
+                      <span> 05 September </span>
                     </li>
                     <br />
                     <li>
                       <label>Professional Career :</label> <br />
-                      <span> Software Engineer, Mern stack Developer </span>
+                      <span> Software Engineer, Full stack Developer </span>
                     </li>
                     <br />
                     <li>
@@ -369,10 +294,16 @@ const Homepage = () => {
                       fontWeight: "600",
                     }}
                   >
-                    I have a huge passion in developing applications using
-                    React.JS and now I am currently working on Next.JS
-                    applications and Improving myself day by day to become a
-                    full stack developer{" "}
+                    I have a deep passion for developing applications, with a
+                    particular focus on ReactJS. Currently, I am working with
+                    Angular to build modern, high-performance web applications
+                    while continuously honing my skills to become a well-rounded
+                    Full Stack Developer. My expertise extends to Java and
+                    Spring Boot for robust back-end development, and I also
+                    leverage Angular to create dynamic and responsive user
+                    interfaces. Committed to improving myself every day, I
+                    strive to deliver innovative and effective solutions across
+                    the full stack.{" "}
                     <i className="bi bi-emoji-smile-fill text-warning" /> Check
                     Out my Projects{" "}
                     <a href="https://github.com/vithun5">
@@ -398,7 +329,7 @@ const Homepage = () => {
                       <div className="third-ProgressBar"></div>
 
                       <div>
-                        Python Programming
+                        Java Programming
                         <span className="fourthProgressStatus">85%</span>
                       </div>
                       <div className="fourth-ProgressBar"></div>
@@ -429,6 +360,7 @@ const Homepage = () => {
           </Box>
         </section>
       </div>
+
       {/* Experience */}
       <div id="experience">
         <section className="experience-section">
@@ -453,11 +385,68 @@ const Homepage = () => {
                   marginBottom: "50px",
                 }}
               >
-                A variety of Experiences all over the world.
+                A variety of Experiences.
               </Typography>
             </Box>
 
             {/* Project 1 */}
+            <>
+              <Box className="center-line"></Box>
+              <Box className="project-icon">
+                <i
+                  class="bi bi-briefcase-fill"
+                  style={{
+                    fontSize: "23px",
+                    color: "white",
+                    position: "absolute",
+                    left: "32%",
+                    top: "20%",
+                  }}
+                ></i>
+              </Box>
+              <Box className="project-details">
+                <Typography className="title1">SK-II GEN3</Typography>
+                <Typography className="subtitle1">
+                  FrontEnd Developer
+                </Typography>
+                {!showSK && (
+                  <i
+                    class="bi bi-caret-down-square-fill bg-FF6969"
+                    style={{
+                      float: "right",
+                      fontSize: "20px",
+                      position: "relative",
+                      bottom: "20px",
+                      backgroundColor: "FF6969",
+                    }}
+                    onClick={() => setShowSK(true)}
+                  ></i>
+                )}
+                {showSK && (
+                  <Typography className="description1">
+                    It is a Beauty product Website, Where there are more than 4
+                    websites for this product which contains different languages
+                    like singapore, English, Chinese, Taiwan, Japan, Tokyo etc.
+                    I worked as a Frontend developer to maintain all the
+                    frontend work of all websites.
+                  </Typography>
+                )}
+              </Box>
+              <Typography
+                sx={{
+                  textAlign: "right",
+                  position: "absolute",
+                  right: "421px",
+                  fontSize: "19px",
+                  letterSpacing: "4px",
+                  fontFamily: "Montserrat",
+                }}
+                style={{ top: showSK ? "325px" : "327px" }}
+                className="project1-date"
+              >
+                April 2023 - present
+              </Typography>
+            </>
             <>
               <Box className="center-line"></Box>
               <Box className="project-icon">
