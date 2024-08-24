@@ -1,0 +1,27 @@
+#portfolio {
+  height: 100%;
+  width: 100%;
+}
+.portfolio-container {
+  padding: 100px;
+  .portfolio-title {
+    text-align: center;
+  }
+}
+
+.card-first:hover {
+  transition: all 500ms ease 0s;
+  transform: scale(110%);
+}
+.card-second:hover {
+  transition: all 500ms ease 0s;
+  transform: scale(110%);
+}
+.card-third:hover {
+  transition: all 500ms ease 0s;
+  transform: scale(110%);
+}
+.card-fourth:hover {
+  transition: all 500ms ease 0s;
+  transform: scale(110%);
+}

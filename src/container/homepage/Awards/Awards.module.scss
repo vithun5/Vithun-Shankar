@@ -1,0 +1,42 @@
+.awards-section {
+  background: URL(../../../assets/images/parallax-2.jpg) no-repeat center center;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+}
+.awards-container {
+  height: 350px;
+  text-align: center;
+}
+.awards-container {
+  padding: 75px 0;
+}
+/* Portfolio*/
+
+#portfolio {
+  height: 100%;
+  width: 100%;
+}
+.portfolio-container {
+  padding: 100px;
+  .portfolio-title {
+    text-align: center;
+  }
+}
+
+.card-first:hover {
+  transition: all 500ms ease 0s;
+  transform: scale(110%);
+}
+.card-second:hover {
+  transition: all 500ms ease 0s;
+  transform: scale(110%);
+}
+.card-third:hover {
+  transition: all 500ms ease 0s;
+  transform: scale(110%);
+}
+.card-fourth:hover {
+  transition: all 500ms ease 0s;
+  transform: scale(110%);
+}
